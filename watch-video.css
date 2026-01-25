@@ -1,0 +1,461 @@
+/* watch-video.css */
+body {
+    background: #000000;
+    margin: 0;
+    padding: 0;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+}
+
+/* Header Styles */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 30px;
+    background: rgba(0, 0, 0, 0.9);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #333;
+}
+
+.logo img {
+    height: 60px;
+}
+
+.nav {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+.nav a {
+    color: #cccccc;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+.nav a:hover,
+.nav a.active {
+    color: #b30000 !important;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.search-btn,
+.history-btn {
+    background: none;
+    border: none;
+    color: #cccccc;
+    font-size: 0.9rem;
+    cursor: pointer;
+    padding: 8px 15px;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    border-radius: 4px;
+}
+
+.search-btn:hover,
+.history-btn:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Main Content - Layout ngang */
+.main-content {
+    margin-top: 80px;
+    min-height: calc(100vh - 80px);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Video Background Section - Chiếm toàn bộ trên cùng */
+.video-background {
+    flex: 1;
+    background: #000;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.video-header {
+    padding: 20px 20px 0;
+    text-align: center;
+}
+
+.movie-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: white;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+/* Video Player - Chiếm phần chính */
+.video-player-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+}
+
+.video-player {
+    width: 100%;
+    max-width: 1200px;
+    background: #111;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.video-player iframe {
+    width: 100%;
+    height: 550px;
+    border: none;
+    display: block;
+}
+
+.play-button-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+}
+
+.play-button {
+    background: #ffffff;
+    color: #000000;
+    border: none;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    font-size: 3.0rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.play-button:hover {
+    background: #f0f0f0;
+    transform: scale(1.0);
+}
+
+/* Interaction Section - Nằm dưới video */
+.interaction-section {
+    padding: 20px 20px 30px;
+    text-align: center;
+}
+
+.interaction-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 20px;
+}
+
+/* Sửa phần like và dislike buttons với nền màu trứng */
+.like-btn, .dislike-btn {
+    background: rgba(255, 253, 248, 0.9);
+    color: #5a4c3a;
+    border: 1px solid #d4c6b4;
+    padding: 15px 265px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s;
+    min-width: 300px;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.like-btn:hover, .dislike-btn:hover {
+    background: rgba(255, 253, 248, 1);
+    transform: translateY(-2px);
+    border-color: #b8a995;
+    box-shadow: 0 4px 12px rgba(90, 76, 58, 0.15);
+}
+
+/* Khi like active - màu đen */
+.like-btn.active {
+    background: #2a2a2a;
+    border-color: #000000;
+    color: #ffffff;
+    box-shadow: 0 0 15px rgba(42, 42, 42, 0.4);
+}
+
+/* Khi dislike active - màu đen */
+.dislike-btn.active {
+    background: #2a2a2a;
+    border-color: #000000;
+    color: #ffffff;
+    box-shadow: 0 0 15px rgba(42, 42, 42, 0.4);
+}
+
+/* Icon màu khi active */
+.like-btn.active .btn-icon,
+.dislike-btn.active .btn-icon {
+    filter: brightness(2);
+}
+
+/* Movie Meta - Nằm giữa like và dislike */
+.movie-meta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    margin: 0 40px 25px 40px;
+}
+
+.imdb-rating {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 193, 7, 0.2);
+    padding: 8px 15px;
+    border-radius: 20px;
+    border: 1px solid #ffc107;
+}
+
+.imdb-icon {
+    font-weight: bold;
+    color: #ffc107;
+    font-size: 1.1rem;
+}
+
+.rating-value {
+    color: #ffc107;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* Comments Section - Nằm dưới cùng */
+.comments-section {
+    background: rgba(20, 20, 20, 0.95);
+    border-top: 1px solid #333;
+    padding: 25px 40px;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    color: white;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.comment-form {
+    margin-bottom: 25px;
+}
+
+.comment-input {
+    width: 100%;
+    background: #111;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 15px;
+    color: white;
+    font-size: 1rem;
+    resize: vertical;
+    min-height: 80px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+
+.comment-input:focus {
+    outline: none;
+    border-color: #b30000;
+}
+
+.submit-comment-btn {
+    background: #b30000;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+    width: 100%;
+}
+
+.submit-comment-btn:hover {
+    background: #990000;
+}
+
+.comments-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.comment {
+    background: #111;
+    border-radius: 8px;
+    padding: 15px;
+    border: 1px solid #222;
+}
+
+.comment-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.comment-author {
+    font-weight: bold;
+    color: white;
+    font-size: 0.9rem;
+}
+
+.comment-date {
+    color: #888;
+    font-size: 0.8rem;
+}
+
+.comment-text {
+    color: #cccccc;
+    line-height: 1.5;
+    font-size: 0.9rem;
+}
+
+/* Loading State */
+.trailer-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    padding: 60px;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.trailer-loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid #333;
+    border-top: 4px solid #b30000;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 15px;
+}
+
+.no-trailer-message {
+    text-align: center;
+    color: #cccccc;
+    padding: 40px;
+    font-size: 1.1rem;
+    background: #000;
+}
+
+.close-video-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 10;
+    border: 1px solid #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.close-video-btn:hover {
+    background: #b30000;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Video Playing State */
+.video-playing .play-button-overlay {
+    display: none;
+}
+
+/* Poster Styles */
+.poster-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000;
+}
+
+.poster-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    max-height: 550px;
+}
+
+/* Server Buttons Styles - Sửa để rộng hơn và màu đỏ */
+.server-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 25px;
+}
+
+.server-btn {
+    background: #b30000;
+    color: white;
+    border: none;
+    padding: 15px 35px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    min-width: 180px;
+    text-align: center;
+    font-weight: bold;
+    box-shadow: 0 4px 12px rgba(179, 0, 0, 0.3);
+}
+
+.server-btn:hover {
+    background: #990000;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(179, 0, 0, 0.4);
+}
+
+.server-btn.active {
+    background: #b30000;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.6);
+    transform: translateY(-1px);
+}

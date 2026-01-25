@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEGAFILM - Search</title>
+    <link rel="stylesheet" href="main_style.css">
+    <link rel="stylesheet" href="search.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <!-- Dòng trên: Logo và navigation cùng dòng -->
+        <div class="header-top">
+            <div class="logo">
+                <a href="search.html" class="logo">
+                    <img src="logo.jpg" alt="MEGAFILM Logo">
+                </a>
+            </div>
+            <nav class="nav">
+                <a href="main_page.html">Home</a>
+                <a href="search.html" class="active" style="color: #b30000; font-weight: bold;">Movies & Shows</a>
+                <a href="#">Support</a>
+                <a href="subscription.html">Subscriptions</a>
+            </nav>
+            <div class="search-container">
+                <button class="search-btn">
+                    <span class="search-icon">🔍</span>
+                    Search
+                </button>
+                <button class="history-btn">
+                    <span class="history-icon">📜</span>
+                    History
+                </button>
+            </div>
+        </div>
+        
+        <!-- Dòng dưới: Thanh tìm kiếm ngay dưới logo -->
+        <div class="header-bottom">
+            <div class="main-search-container">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Search for movies, TV shows, actors...">
+                    <button class="search-submit-btn" onclick="searchMovies()">
+                        <span class="btn-icon">🔍</span>
+                    </button>
+                </div>
+                
+                <!-- Nút Advanced Filters -->
+                <div class="advanced-search-toggle">
+                    <button class="toggle-filters-btn" onclick="toggleAdvancedFilters()">
+                        <span class="toggle-arrow">▼</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Advanced Search Filters - ĐÃ DI CHUYỂN VÀO ĐÂY -->
+        <div class="advanced-filters hidden" id="advancedFilters">
+            <div class="filter-row">
+                <div class="filter-group">
+                    <label for="genreFilter">Genre</label>
+                    <select id="genreFilter">
+                        <option value="">All Genres</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="countryFilter">Country</label>
+                    <select id="countryFilter">
+                        <option value="">All Countries</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="yearFilter">Year</label>
+                    <select id="yearFilter">
+                        <option value="">All Years</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="filter-row">
+                <div class="filter-group">
+                    <label for="ratingFilter">IMDb Rating</label>
+                    <select id="ratingFilter">
+                        <option value="">Any Rating</option>
+                        <option value="9">9+</option>
+                        <option value="8">8+</option>
+                        <option value="7">7+</option>
+                        <option value="6">6+</option>
+                        <option value="5">5+</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="sortBy">Sort By</label>
+                    <select id="sortBy">
+                        <option value="popularity.desc">Popularity</option>
+                        <option value="release_date.desc">Newest</option>
+                        <option value="release_date.asc">Oldest</option>
+                        <option value="vote_average.desc">Rating</option>
+                        <option value="title.asc">Title A-Z</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label>&nbsp;</label>
+                    <button class="advanced-search-btn" onclick="applyFilters()">
+                        <span class="btn-icon">🔍</span>
+                        Apply Filters
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Background Section -->
+    <div class="background-section">
+        <div class="background-overlay-search"></div>
+        
+        <!-- Search Header Content - Đã xóa dòng "Find Your Favorite Movies & Shows" -->
+        <div class="search-header">
+            <div class="search-info-section">
+                <!-- Đã xóa tiêu đề và mô tả -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Search Results Section - Đưa lên trước Featured Movies -->
+    <section id="search-results" class="movies-section hidden">
+        <div class="movies-container">
+            <h2 class="section-title">Search Results</h2>
+            <div id="search-results-grid" class="movies-grid"></div>
+            <div class="load-more-container">
+                <button id="loadMoreBtn" class="load-more-btn hidden" onclick="loadMoreMovies()">
+                    Load More
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Movies Section -->
+    <section class="movies-section">
+        <div class="movies-container">
+            <h2 class="section-title">Featured Movies</h2>
+            <div id="movies-grid" class="movies-grid"></div>
+        </div>
+    </section>
+
+    <!-- Loading Indicator -->
+    <div id="loading" class="loading hidden">
+        <div class="loading-spinner"></div>
+        <p>Loading...</p>
+    </div>
+
+    <script src="search.js"></script>
+</body>
+</html>

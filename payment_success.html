@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEGAFILM - Payment Successful</title>
+    <link rel="stylesheet" href="payment_success.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <a href="search.html" class="logo">
+                <img src="logo.jpg" alt="MEGAFILM Logo">
+            </a>
+        </div>
+        <nav class="nav">
+            <a href="main_page.html">Home</a>
+            <a href="movie-detail.html">Movies & Shows</a>
+            <a href="#">Support</a>
+            <a href="subscription.html" class="active">Subscriptions</a>
+        </nav>
+        <div class="search-container">
+            <a href="search.html" class="search-btn">
+                <span class="search-icon">🔍</span>
+                Search
+            </a>
+            <button class="history-btn">
+                <span class="history-icon">📜</span>
+                History
+            </button>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="payment-success-section">
+            <!-- Step Indicator -->
+            <div class="step-indicator">
+                <div class="step">
+                    <div class="step-circle">1</div>
+                    <div class="step-text">Select Plan</div>
+                    <div class="step-line"></div>
+                </div>
+                <div class="step">
+                    <div class="step-circle">2</div>
+                    <div class="step-text">Payment Method</div>
+                    <div class="step-line"></div>
+                </div>
+                <div class="step active">
+                    <div class="step-circle">3</div>
+                    <div class="step-text">Confirmation</div>
+                </div>
+            </div>
+            
+            <!-- QR Code -->
+            <div class="qr-code">
+                <img src="qr-code.jpg" alt="Payment QR Code">
+            </div>
+            
+            <!-- Tất cả thông báo sẽ hiện sau 2 giây -->
+            <div class="success-message" id="successMessage">
+                <!-- Payment Successful Message -->
+                <h1 class="success-title">Payment Successful!</h1>
+                
+                <!-- Congratulations Message -->
+                <div class="checkmark-container">
+                    <div class="checkmark">✓</div>
+                </div>
+                <h2 class="congrats-title">Congratulations!</h2>
+                <p class="congrats-text">You have successfully subscribed to our Premium Plan. Enjoy unlimited access to all movies and shows!</p>
+                <a href="movie-detail.html" class="watching-now-btn">
+                    <span class="play-icon">▶</span>
+                    Watching Now
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="payment_success.js"></script>
+</body>
+</html>

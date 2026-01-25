@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEGAFILM - Watch Video</title>
+    <link rel="stylesheet" href="watch-video.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <a href="search.html" class="logo">
+                <img src="logo.jpg" alt="MEGAFILM Logo">
+            </a>
+        </div>
+        <nav class="nav">
+            <a href="main_page.html">Home</a>
+        	<a href="movie-detail.html" class="active">Movies & Shows</a>
+            <a href="#">Support</a>
+            <a href="subscription.html">Subscriptions</a>
+        </nav>
+        <div class="search-container">
+            <button class="search-btn">
+                <span class="search-icon">🔍</span>
+                Search
+            </button>
+            <button class="history-btn">
+                <span class="history-icon">📜</span>
+                History
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Video Background Section -->
+        <div class="video-background">
+            <!-- Video Header với tên phim -->
+            <div class="video-header">
+                <h1 class="movie-title" id="movieTitle">Loading...</h1>
+            </div>
+
+            <!-- Video Player Container -->
+            <div class="video-player-container">
+                <div class="video-player">
+                    <!-- Poster Image -->
+                    <div class="poster-container" id="posterContainer">
+                        <img class="poster-image" id="posterImage" src="" alt="Movie Poster">
+                        <!-- Play Button Overlay -->
+                        <div class="play-button-overlay">
+                            <button class="play-button" id="playButton">
+                                ▶
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Video Container -->
+                    <div id="trailerContainer">
+                        <div class="trailer-loading">
+                            <div class="trailer-loading-spinner"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interaction Section -->
+            <div class="interaction-section">
+			    <div class="movie-meta">
+			        <div class="imdb-rating" id="imdbRating">
+			            <span class="imdb-icon">IMDb</span>
+			            <span class="rating-value" id="ratingValue">0.0</span>
+			        </div>
+			    </div>
+                <div class="server-buttons">
+                    <button class="server-btn active">
+                        <span class="btn-text">Server 1</span>
+                    </button>
+                    <button class="server-btn">
+                        <span class="btn-text">Server 2</span>
+                    </button>
+                </div>
+                <!-- Like và Dislike Buttons -->
+                <div class="interaction-buttons">
+                    <button class="like-btn" id="likeBtn">
+                        <span class="btn-icon">👍</span>
+                        <span class="btn-text">Like</span>
+                    </button>
+                    <button class="dislike-btn" id="dislikeBtn">
+                        <span class="btn-icon">👎</span>
+                        <span class="btn-text">Dislike</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Comments Section - Nằm dưới cùng -->
+        <div class="comments-section">
+            <h2 class="section-title">Comment</h2>
+            
+            <div class="comment-form">
+                <textarea class="comment-input" id="commentInput" placeholder="Share your feeling..."></textarea>
+                <button class="submit-comment-btn" id="submitCommentBtn">Post</button>
+            </div>
+            
+            <div class="comments-list" id="myCommentsList">
+                <!-- User's comments will be shown here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="watch-video.js"></script>
+</body>
+</html>

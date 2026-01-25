@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEGAFILM - Payment</title>
+    <link rel="stylesheet" href="payment.css">
+</head>
+<body>
+    <!-- Header - ĐÃ SỬA HOÀN TOÀN -->
+    <header class="header">
+        <div class="logo">
+            <a href="search.html" class="logo">
+                <img src="logo.jpg" alt="MEGAFILM Logo">
+            </a>
+        </div>
+        <nav class="nav">
+            <a href="main_page.html">Home</a>
+            <a href="movie-detail.html">Movies & Shows</a>
+            <a href="#">Support</a>
+            <a href="subscription.html" class="active">Subscriptions</a>
+        </nav>
+        <div class="search-container">
+            <a href="search.html" class="search-btn">
+                <span class="search-icon">🔍</span>
+                Search
+            </a>
+            <button class="history-btn">
+                <span class="history-icon">📜</span>
+                History
+            </button>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Khung chứa toàn bộ phần nội dung -->
+        <div class="payment-section">
+            <!-- Step Indicator -->
+            <div class="step-indicator">
+                <div class="step">
+                    <div class="step-circle">1</div>
+                    <div class="step-text">Select Plan</div>
+                    <div class="step-line"></div>
+                </div>
+                <div class="step active">
+                    <div class="step-circle">2</div>
+                    <div class="step-text">Payment Method</div>
+                    <div class="step-line"></div>
+                </div>
+                <div class="step">
+                    <div class="step-circle">3</div>
+                    <div class="step-text">Confirmation</div>
+                </div>
+            </div>
+            
+            <div class="section-header">
+                <h1>Choose How to Pay</h1>
+                <p class="subtitle">Your payment is encrypted and you can change your payment method at anytime.</p>
+            </div>
+            
+            <div class="payment-features">
+                <div class="feature">
+                    <span class="feature-icon">🔒</span>
+                    <span>Secure for peace of mind</span>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">🔄</span>
+                    <span>Cancel easily online</span>
+                </div>
+            </div>
+            
+            <div class="payment-methods">
+                <!-- Credit/Debit Card Option -->
+                <div class="payment-option selected" id="card-option">
+                    <div class="payment-content">
+                        <div class="payment-details">
+                            <div class="payment-title">
+                                Credit or Debit Card
+                                <div class="payment-icons">
+                                    <div class="payment-icon visa">Visa</div>
+                                    <div class="payment-icon mastercard">MC</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="arrow-icon">></div>
+                </div>
+                
+                <!-- Digital Wallet Option -->
+                <div class="payment-option" id="wallet-option">
+                    <div class="payment-content">
+                        <div class="payment-details">
+                            <div class="payment-title">
+                                UPI Auto Pay
+                                <div class="payment-icons">
+                                    <div class="payment-icon paypal">PayPal</div>
+                                    <div class="payment-icon apple"></div>
+                                    <div class="payment-icon google">G</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="arrow-icon">></div>
+                </div>
+            </div>
+            
+            <div class="btn-container">
+                <a href="subscription.html" class="btn back-btn">Back to Plans</a>
+                <a href="payment_success.html" class="btn pay-btn">Continue to Payment</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="payment.js"></script>
+</body>
+</html>
