@@ -1,138 +1,143 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MEGAFILM - Movies & Shows</title>
-    <link rel="stylesheet" href="movie-detail.css">
-</head>
-<body>
+    <link rel="stylesheet" href="movie-detail.css" />
+  </head>
+  <body>
     <!-- Header -->
     <header class="header">
-        <div class="logo">
-            <a href="search.html" class="logo">
-                <img src="logo.jpg" alt="MEGAFILM Logo">
-            </a>
-        </div>
-        <nav class="nav">
-            <a href="main_page.html">Home</a>
-            <a href="movie-detail.html" class="active">Movies & Shows</a>
-            <a href="#">Support</a>
-            <a href="subscription.html">Subscriptions</a>
-        </nav>
-        <div class="search-container">
-            <!-- Nút Search riêng -->
-            <button class="search-btn">
-                <span class="search-icon">🔍</span>
-                Search
-            </button>
-            
-            <!-- Nút History riêng -->
-            <button class="history-btn">
-                <span class="history-icon">📜</span>
-                History
-            </button>
-        </div>
+      <div class="logo">
+        <a href="main_page.html" class="logo">
+          <img src="logo.jpg" alt="MEGAFILM Logo" />
+        </a>
+      </div>
+      <nav class="nav">
+        <a href="main_page.html">Home</a>
+        <a href="movie-detail.html" class="active">Movies & Shows</a>
+        <a href="#">Support</a>
+        <a href="subscription.html">Subscriptions</a>
+      </nav>
+      <div class="search-container">
+        <button class="search-btn">
+          <span class="search-icon">🔍</span>
+          Search
+        </button>
+        <button class="history-btn">
+          <span class="history-icon">📜</span>
+          History
+        </button>
+      </div>
     </header>
 
     <!-- Background Section -->
     <div class="background-section">
-        <img src="" alt="" class="background-image" id="backgroundImage" onerror="this.src='https://via.placeholder.com/1920x1080/333/fff?text=No+Image'">
-        <div class="background-overlay"></div>
-        
-        <!-- Movie Header -->
-        <div class="movie-header">
-            <div class="movie-info-section">
-                <span class="series-label" id="mediaType">Movie</span>
-                <h1 class="movie-title-large" id="movieTitle">Loading...</h1>
-                
-                <div class="movie-meta">
-                    <span class="year" id="releaseYear"></span>
-                    <span class="runtime" id="runtime"></span>
-                    <span class="genres" id="genres"></span>
-                    <span class="rating" id="rating"></span>
-                </div>
-                
-                <!-- Action Buttons Container -->
-                <div class="action-buttons-container">
-                    <div class="action-buttons-primary">
-                        <button class="watch-now-btn" id="watchNowBtn">
-                            <span class="btn-icon">▶</span>
-                            Watch now
-                        </button>
-                        <button class="trailer-btn" id="trailerBtn">
-                            <span class="btn-icon">🎬</span>
-                            Watch Trailer
-                        </button>
-                        <button class="watchlist-btn" id="watchlistBtn">
-                            <span class="btn-icon">+</span>
-                            Add Watchlist
-                        </button>
-                    </div>
-                    
-                    <div class="action-buttons-secondary">
-                        <button class="action-btn" id="downloadBtn">
-                            <span class="btn-icon">⭳</span>
-                            Download
-                        </button>
-                        <button class="action-btn" id="shareBtn">
-                            <span class="btn-icon">↗</span>
-                            Share
-                        </button>
-                        <button class="action-btn" id="likeBtn">
-                            <span class="thumbs-up-icon">👍</span>
-                            Like
-                        </button>
-                    </div>
-                </div>
+      <img src="" alt="" class="background-image" id="backgroundImage" />
+      <div class="background-overlay"></div>
+
+      <div class="movie-header">
+        <div class="movie-info-section">
+          <span class="series-label" id="mediaType">Movie</span>
+          <h1 class="movie-title-large" id="movieTitle">Loading...</h1>
+
+          <div class="movie-meta">
+            <span class="year" id="releaseYear"></span>
+            <span class="runtime" id="runtime"></span>
+            <span class="genres" id="genres"></span>
+            <span class="rating" id="rating"></span>
+          </div>
+
+          <div class="action-buttons-container">
+            <div class="action-buttons-primary">
+              <button class="watch-now-btn" id="watchNowBtn">
+                <span class="btn-icon">▶</span>
+                Watch now
+              </button>
+              <button class="trailer-btn" id="trailerBtn">
+                <span class="btn-icon">🎬</span>
+                Watch Trailer
+              </button>
+              <button class="watchlist-btn" id="watchlistBtn">
+                <span class="btn-icon">+</span>
+                Add Watchlist
+              </button>
             </div>
+
+            <div class="action-buttons-secondary">
+              <button class="action-btn" id="downloadBtn">
+                <span class="btn-icon">⭳</span>
+                Download
+              </button>
+              <button class="action-btn" id="shareBtn">
+                <span class="btn-icon">↗</span>
+                Share
+              </button>
+              <button class="action-btn" id="likeBtn">
+                <span class="thumbs-up-icon">👍</span>
+                Like
+              </button>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
 
     <!-- Navigation Arrows -->
     <div class="navigation-arrows">
-        <button class="nav-arrow" id="prevBtn">‹</button>
-        <div class="nav-dots" id="navDots">
-            <button class="nav-dot active"></button>
-        </div>
-        <button class="nav-arrow" id="nextBtn">›</button>
+      <button class="nav-arrow" id="prevBtn">‹</button>
+      <div class="nav-dots" id="navDots">
+        <button class="nav-dot active"></button>
+      </div>
+      <button class="nav-arrow" id="nextBtn">›</button>
     </div>
 
     <!-- Story Line -->
     <section class="story-line-section">
-        <div class="story-line-content">
-            <h2 class="section-title">Story Line</h2>
-            <div class="story-content">
-                <p class="story-text" id="overview">
-                    Loading movie description...
-                </p>
-            </div>
+      <div class="story-line-content">
+        <h2 class="section-title">Story Line</h2>
+        <div class="story-content">
+          <p class="story-text" id="overview">Loading movie description...</p>
         </div>
+      </div>
     </section>
-    
+
     <!-- Top Cast -->
     <section class="cast-section">
-        <div class="cast-container">
-            <h2 class="section-title">Top Cast</h2>
-            <div class="cast-grid" id="castGrid">
-                <div class="cast-placeholder">Loading cast...</div>
-            </div>
+      <div class="cast-container">
+        <h2 class="section-title">Top Cast</h2>
+        <div class="cast-grid" id="castGrid">
+          <div class="cast-placeholder">Loading cast...</div>
         </div>
+      </div>
+    </section>
+
+    <!-- Featured Movies -->
+    <section class="featured-movies-section">
+      <div class="featured-movies-container">
+        <h2 class="section-title">🔥 Phim Nổi Bật</h2>
+        <div class="featured-movies-grid" id="featuredMoviesGrid">
+          <div class="featured-movies-placeholder">
+            Đang tải phim nổi bật...
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Modal Trailer -->
     <div id="trailerModal" class="modal hidden">
-        <div class="modal-content">
-            <span class="close" id="closeTrailer">&times;</span>
-            <div class="trailer-container" id="trailerContainer">
-                <div class="trailer-loading">
-                    <div class="trailer-loading-spinner"></div>
-                    <p>Đang tải trailer...</p>
-                </div>
-            </div>
+      <div class="modal-content">
+        <span class="close" id="closeTrailer">&times;</span>
+        <div class="trailer-container" id="trailerContainer">
+          <div class="trailer-loading">
+            <div class="trailer-loading-spinner"></div>
+            <p>Đang tải trailer...</p>
+          </div>
         </div>
+      </div>
     </div>
 
     <script src="movie-detail.js"></script>
-</body>
+  </body>
 </html>
